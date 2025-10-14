@@ -4,3 +4,9 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+chrono = "0.4.42"
+crossterm = "0.29.0"
+ratatui = "0.29.0"
+strum = "0.27.2"
+strum_macros = "0.27.2"
+tui-big-text = "0.7.1"
