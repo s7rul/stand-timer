@@ -1,5 +1,6 @@
 use chrono::{Duration, Local};
 use clap::Parser;
+use notify_rust::Notification;
 use std::io;
 use strum_macros::Display;
 use tui_big_text::{BigText, PixelSize};
@@ -73,9 +74,11 @@ impl App {
                 match self.sit_stand {
                     SitStanState::Stand => {
                         self.sit_stand = SitStanState::Sit;
+                        Notification::new().summary("Sit down").body("Time to sit down.").show().unwrap();
                     }
                     SitStanState::Sit => {
                         self.sit_stand = SitStanState::Stand;
+                        Notification::new().summary("Stand up").body("Time to stand up.").show().unwrap();
                     }
                 }
             }
