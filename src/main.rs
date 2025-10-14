@@ -1,4 +1,5 @@
 use chrono::{Duration, Local};
+use clap::Parser;
 use std::io;
 use strum_macros::Display;
 use tui_big_text::{BigText, PixelSize};
@@ -8,8 +9,22 @@ use ratatui::{
     DefaultTerminal, Frame, style::Stylize, symbols::border, text::Line, widgets::Block,
 };
 
+#[derive(Parser, Debug)]
+#[command(version)]
+pub struct Args {
+    /// Sit time in minutes
+    #[arg(long)]
+    pub sit_time: u32,
+    /// Stand time in minutes
+    #[arg(long)]
+    pub stand_time: u32,
+}
+
+
 fn main() {
-    let mut app = App::new();
+    let args = Args::parse();
+
+    let mut app = App::new(args.sit_time, args.stand_time);
     let mut terminal = ratatui::init();
     app.run(&mut terminal).unwrap();
     ratatui::restore();
@@ -32,11 +47,11 @@ struct App {
 }
 
 impl App {
-    fn new() -> Self {
+    fn new(sit_time: u32, stand_time: u32) -> Self {
         Self {
-            sit_time: Duration::minutes(20),
-            stand_time: Duration::minutes(5),
-            timer: Duration::minutes(20),
+            sit_time: Duration::minutes(sit_time as i64),
+            stand_time: Duration::minutes(stand_time as i64),
+            timer: Duration::minutes(sit_time as i64),
             sit_stand: SitStanState::Sit,
             exit: false,
         }
