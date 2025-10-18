@@ -1,11 +1,13 @@
 [package]
 name = "stand-timer"
 description = "Timer to remind when to sit and stand while working."
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 license = "MIT"
 repository = "https://github.com/s7rul/stand-timer"
 readme = "README.md"
+categories = ["command-line-utilities"]
+keywords = ["timer", "sit", "stand", "tui"]
 
 [dependencies]
 chrono = "0.4.42"
