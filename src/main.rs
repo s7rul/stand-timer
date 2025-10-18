@@ -21,7 +21,6 @@ pub struct Args {
     pub stand_time: u32,
 }
 
-
 fn main() {
     let args = Args::parse();
 
@@ -74,11 +73,19 @@ impl App {
                 match self.sit_stand {
                     SitStanState::Stand => {
                         self.sit_stand = SitStanState::Sit;
-                        Notification::new().summary("Sit down").body("Time to sit down.").show().unwrap();
+                        Notification::new()
+                            .summary("Sit down")
+                            .body("Time to sit down.")
+                            .show()
+                            .unwrap();
                     }
                     SitStanState::Sit => {
                         self.sit_stand = SitStanState::Stand;
-                        Notification::new().summary("Stand up").body("Time to stand up.").show().unwrap();
+                        Notification::new()
+                            .summary("Stand up")
+                            .body("Time to stand up.")
+                            .show()
+                            .unwrap();
                     }
                 }
             }
