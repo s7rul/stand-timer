@@ -6,7 +6,6 @@ A simple timer to remind you to stand up and sit down when you work. Will also s
 Install from crates.io:
 ```
 cargo install stand-timer
-
 ```
 Install from local source:
 ```
