@@ -2,6 +2,8 @@
 name = "stand-timer"
 version = "0.1.0"
 edition = "2024"
+license = "MIT"
+license-file = "LICENSE.txt"
 
 [dependencies]
 chrono = "0.4.42"
