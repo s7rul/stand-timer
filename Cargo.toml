@@ -4,7 +4,6 @@ description = "Timer to remind when to sit and stand while working."
 version = "0.1.0"
 edition = "2024"
 license = "MIT"
-license-file = "LICENSE.txt"
 repository = "https://github.com/s7rul/stand-timer"
 readme = "README.md"
 
