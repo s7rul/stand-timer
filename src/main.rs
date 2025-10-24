@@ -107,7 +107,7 @@ impl App {
         let inner = main_block.inner(area);
 
         let timer_text = format!(
-            "{}:{:0>2}",
+            "{:0>2}:{:0>2}",
             self.timer.num_minutes(),
             self.timer.num_seconds() % 60
         );
