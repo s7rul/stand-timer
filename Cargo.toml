@@ -1,7 +1,7 @@
 [package]
 name = "stand-timer"
 description = "Timer to remind when to sit and stand while working."
-version = "0.1.1"
+version = "0.1.2"
 edition = "2024"
 license = "MIT"
 repository = "https://github.com/s7rul/stand-timer"
